@@ -1,0 +1,24 @@
+{
+    "UPSCASE2":{
+        "object_owner": {
+            "schema_roles": [
+                {
+                    "schema": "CS1A_SCHEMA_1",
+                    "roles_with_admin_option": [
+                        "CS1XHDIO#"
+                    ]
+                }
+            ]
+        },
+        "application_user": {
+            "schema_roles": [
+                {
+                    "schema": "CS1A_SCHEMA_1",
+                    "roles": [
+                        "CS1XHDIA"
+                    ]
+                }
+            ]
+        }
+    }
+}

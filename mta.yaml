@@ -1,0 +1,31 @@
+_schema-version: "2.1"
+ID: CS2UPSB
+version: 0.0.1
+modules:
+- name: CS2UPSdb
+  type: hdb
+  path: CS2UPSdb
+  requires:
+  - name: hdi_CS2UPSdb
+    properties:
+      TARGET_CONTAINER: ~{hdi-container-name}
+  - name: cross-container-service-1
+    group: SERVICE_REPLACEMENTS
+    properties:
+      key: ServiceName_1
+      service: ~{the-service-name}
+resources:
+- name: hdi_CS2UPSdb
+  type: com.sap.xs.hdi-container
+  parameters:
+    config:
+      database_id: 0ae2197f-de5a-4c15-b28d-b93c2636af0e
+      schema: CS2UPS_Schema
+  properties:
+    hdi-container-name: ${service-name}
+- name: cross-container-service-1
+  type: org.cloudfoundry.existing-service
+  parameters:
+    service-name: UPSCASE2
+  properties:
+    the-service-name: ${service-name}
